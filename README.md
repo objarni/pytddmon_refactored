@@ -1,12 +1,12 @@
 # pytddmon_refactored
 An attempt to refactor pytddmon into a more unit-testable and extensible architecture
-based on Finite State Machines / message queues
+based on Finite State Machines / message queues.
 
 
 Problems with current design
 ============================
 
-The current pytddmon source is basically a "hack"; it began with any unit tests at all,
+The current pytddmon source is basically a "hack"; it began without any unit tests at all,
 written in a night of inspiration (and perspiration).
 
 It used pygame for the graphical user interface, and os.system() calls to run tests
