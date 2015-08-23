@@ -28,7 +28,7 @@ Pytddmon class.
 A new design
 ============
 
-A moder loosely coupled design is basing as many components as possible of pytddmon on
+A more loosely coupled design would be to base as many components as possible of pytddmon on
 _finite state machines_, running (logically) independent of each other, and just publishing
 and/or listening to events happening in the system.
 
