@@ -34,11 +34,11 @@ and/or listening to events happening in the system.
 
 The function of pytddmon lends itself to be described by such devices quite naturally:
 
-    - The TestRunner would be a state machine that is responsible for running tests.
-    - The ChangeDetector would be a state machine that is responsible for detecting file changes.
-    - The Lamp would be a state machine responsible for updating the UI depending on
-      test results (and possibly tests being run too, a feature not present in current
-      pytddmon.)
+1. The TestRunner would be a state machine that is responsible for running tests.
+
+2. The ChangeDetector would be a state machine that is responsible for detecting file changes.
+
+3. The Lamp would be a state machine responsible for updating the UI depending on test results (and possibly tests being run too, a feature not present in current pytddmon.)
       
 With this architecture, the whole of pytddmon would be setting up these machines, choosing
 an appropriate UI object (Tk/Gtk/Console), and then making the whole thing 'tick' by
@@ -48,14 +48,15 @@ publishing events.
 Open questions
 ==============
 
-1. How does the ChangeDetector detect files...? What makes it scan for file changes? In
+1. How does the ChangeDetector detect file changes...? What makes it scan for file changes? In
 traditional pytddmon, this was a timeout triggering a scan every half a second. The
 equivalent in this redesign would be a thread publishing a 'heartbeat' event with same
 interval, or a mechanism that is intrinsic to the choice of GUI tech (preferably not).
-An even better approach would be to listen to operating system level notifications.
 
-2. How do devices publish events? For testability, the publish method should be easily
+2. Given this more general architecture, would a notification mechanism/object based on operating system events/notifications be more viable? What about Windows?
+
+3. How do devices publish events? For testability, the publish method should be easily
 mockable.
 
-3. What's an event? Is it a better name than signal, or message?
+4. What's an event? Is it a better name than signal or message?
 
